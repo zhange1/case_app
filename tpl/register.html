@@ -1,0 +1,39 @@
+
+<div ng-include="'tpl/include/header.html'"></div>
+
+<ion-content class="has-header has-footer">
+  <div
+    ng-hide="result"
+    class="list list-inset">
+    <label class="item item-input item-floating-label">
+      <span class="input-label">用户名</span>
+      <input type="text"
+             ng-model="users.uname"
+             placeholder="请输入用户名"/>
+    </label>
+    <label class="item item-input item-floating-label">
+      <span class="input-label">密码</span>
+      <input type="password"
+             ng-model="users.pwd"
+             placeholder="请输入密码"/>
+    </label>
+    <label class="item item-input item-floating-label">
+      <span class="input-label">联系电话</span>
+      <input type="text"
+             ng-model="users.phone"
+             placeholder="请输入联系电话"/>
+    </label>
+    <button
+      ng-click="register()" ng-disabled="!users.uname||!users.pwd||!users.phone"
+      class="button button-block button-balanced">注册</button>
+  </div>
+
+  <div class="card" ng-show="result">
+    <div class="item">
+      {{result}}
+    </div>
+  </div>
+
+</ion-content>
+
+<!--<div ng-include="'tpl/include/footer.html'"></div>-->

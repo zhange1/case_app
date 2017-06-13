@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="case">
+<head lang="en">
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+  <link rel="stylesheet" href="css/ionic.css"/>
+  <link rel="stylesheet" href="css/case.css"/>
+   <link href="img/main.jpg" rel=" icon">
+  <script src="js/ionic.bundle.js"></script>
+  <script src="js/case.js"></script>
+  <title></title>
+</head>
+<body ng-controller="parentCtrl">
+
+<ion-side-menus>
+    <ion-side-menu-content>
+        <div ui-view>
+
+        </div>
+
+    </ion-side-menu-content>
+    <ion-side-menu >
+        <ul class="list list-inset">
+            <li class="item" ng-click="close()" ui-sref="login" ng-if=!uid>登录</li>
+            <li class="item" ng-click="close()" ui-sref="myOrder">我的订单</li>
+            <li class="item" ng-click="close()" ui-sref="myMsg">我的消息</li>
+            <li class="item" ng-click="close()" ui-sref="setting">设置</li>
+            <li class="item" ng-click="close()">关闭菜单</li>
+        </ul>
+    </ion-side-menu>
+</ion-side-menus>
+
+
+
+<ion-tabs class="tabs-icon-top">
+  <ion-tab icon="ion-home"
+           on-select="jump('main')"
+           title="主页"></ion-tab>
+  <ion-tab icon="ion-person"
+           on-select="jump('login')"
+           title="我的订单"></ion-tab>
+  <ion-tab icon="ion-bag"
+           on-select="jump('cart')"
+           badge="data.totalNumInCart"
+           badge-style="badge-assertive"
+           title="购物车"></ion-tab>
+  <ion-tab icon="ion-ios-gear"
+           on-select="jump('setting')"
+           title="设置"></ion-tab>
+</ion-tabs>
+
+</body>
+</html>

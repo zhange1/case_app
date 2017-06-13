@@ -1,0 +1,36 @@
+<div ng-include="'tpl/include/header.html'"></div>
+
+<ion-content class="has-header has-footer">
+  <!--<video ng-src="img/snow.mp4" autoplay loop muted></video>-->
+  <div
+    ng-hide="result"
+    class="list list-inset">
+    <label class="item item-input item-floating-label">
+      <span class="input-label">用户名</span>
+      <input type="text"
+             ng-model="users.uname"
+             placeholder="请输入用户名" autofocus/>
+    </label>
+    <label class="item item-input item-floating-label">
+      <span class="input-label">密码</span>
+      <input type="password"
+             ng-model="users.pwd"
+             placeholder="请输入密码"/>
+    </label>
+    <button
+      ng-click="login()"
+      class="button button-block button-balanced">登录</button>
+    <button
+            ng-click="jump('register')"
+      class="button button-block button-energized">没有账号？去注册</button>
+  </div>
+
+  <div class="card" ng-show="result">
+    <div class="item">
+      {{result}}
+    </div>
+  </div>
+
+</ion-content>
+
+<!--<div ng-include="'tpl/include/footer.html'"></div>-->

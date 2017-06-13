@@ -1,0 +1,26 @@
+
+
+.centered{
+  position: fixed;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+}
+
+.img-responsive{
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+/*
+video{
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+    /!*height:380px;*!/
+}
+.list.list-inset{
+  position: relative;
+  background-color: transparent;
+
+}*/
